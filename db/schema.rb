@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_16_185543) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_16_192514) do
+  create_table "matches", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_matches_on_recipient_id"
+    t.index ["sender_id"], name: "index_matches_on_sender_id"
+  end
+
   create_table "pay_charges", force: :cascade do |t|
     t.bigint "customer_id", null: false
     t.bigint "subscription_id"
@@ -114,6 +123,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_185543) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "users", column: "recipient_id"
+  add_foreign_key "matches", "users", column: "sender_id"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
