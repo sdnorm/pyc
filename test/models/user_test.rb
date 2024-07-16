@@ -2,16 +2,19 @@
 #
 # Table name: users
 #
-#  id                     :integer          not null, primary key
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  first_name             :string           not null
-#  last_name              :string           not null
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id                       :integer          not null, primary key
+#  date_of_terms_of_service :datetime
+#  email                    :string           default(""), not null
+#  encrypted_password       :string           default(""), not null
+#  first_name               :string           not null
+#  last_name                :string           not null
+#  remember_created_at      :datetime
+#  reset_password_sent_at   :datetime
+#  reset_password_token     :string
+#  terms_of_service         :boolean
+#  time_zone                :string           default("UTC")
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #
 # Indexes
 #
