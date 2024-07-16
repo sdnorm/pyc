@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id                       :integer          not null, primary key
+#  id                       :bigint           not null, primary key
 #  date_of_terms_of_service :datetime
 #  email                    :string           default(""), not null
 #  encrypted_password       :string           default(""), not null

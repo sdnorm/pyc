@@ -2,11 +2,11 @@
 #
 # Table name: matches
 #
-#  id           :integer          not null, primary key
+#  id           :bigint           not null, primary key
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  recipient_id :integer
-#  sender_id    :integer
+#  recipient_id :bigint
+#  sender_id    :bigint
 #
 # Indexes
 #
@@ -15,8 +15,8 @@
 #
 # Foreign Keys
 #
-#  recipient_id  (recipient_id => users.id)
-#  sender_id     (sender_id => users.id)
+#  fk_rails_...  (recipient_id => users.id)
+#  fk_rails_...  (sender_id => users.id)
 #
 require "test_helper"
 
