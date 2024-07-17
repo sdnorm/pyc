@@ -12,8 +12,8 @@
   </head>
 
   <body>
-    <%= render "shared/signed_in_navbar" if current_user %>
-    <%= render "shared/navbar" unless current_user %>
+    <%= render "shared/signed_in_navbar" if current_user && @show_navbar %>
+    <%= render "shared/navbar" if !current_user && @show_navbar %>
     <%= render "layouts/flash_messages" %>
     <main class="mx-3">
       <%= yield %>

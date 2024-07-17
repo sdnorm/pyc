@@ -12,3 +12,22 @@
   font-weight: bold;
   font-size: 14px;
 }
+
+.subtitle-bg-wrapper .subtitle-bg-yellow {
+  background: url('https://media.playyourcourt.com/redesign/subtitle-bg-yellow.png?d5739f29a054');
+  background-size: 100% 100%;
+  color: #f2f65f;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+}
+
+.main-header {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.sub-header {
+  font-size: 1.125rem; /* text-lg */
+  max-width: 48rem; /* max-w-3xl */
+}
