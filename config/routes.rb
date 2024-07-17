@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  namespace :users do
+    get 'pages/dashboard'
+    get 'pages/profile'
+  end
+
   devise_for :users, controllers: { 
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -8,6 +12,13 @@ Rails.application.routes.draw do
     unlocks: 'users/unlocks',
     # omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
+  authenticated :user do
+    resources :matches
+    root to: "users/pages#dashboard", as: :authenticated_root
+    get "/profile", to: "users/pages#profile", as: :profile
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -19,4 +30,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "devise/registrations#new" # sign up path
   root "pages#index"
+
 end
