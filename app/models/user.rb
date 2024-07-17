@@ -38,4 +38,8 @@ class User < ApplicationRecord
   def update_date_of_terms_of_service
     self.update(date_of_terms_of_service: Time.now) if self.terms_of_service_previously_changed?
   end
+
+  def initials
+    "#{first_name[0]}#{last_name[0]}"
+  end
 end
