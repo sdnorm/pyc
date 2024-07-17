@@ -5,7 +5,9 @@
     <div class="relative z-10 bg-opacity-80 bg-brown-900 min-h-screen flex flex-col">
       <header class="flex justify-between items-center p-4">
         <div class="flex-shrink-0">
-          <img class="h-8 w-auto" src="https://media.playyourcourt.com/images/pyc-logo-yellow.png" alt="Play Your Court">
+          <%= link_to root_path do %>
+            <img class="h-8 w-auto" src="https://media.playyourcourt.com/images/pyc-logo-yellow.png" alt="Play Your Court">
+          <% end %>
         </div>
         <nav class="hidden md:flex space-x-4">
           <a href="#" class="text-pyc-yellow-300 hover:text-pyc-yellow-100">TAKE LESSONS</a>
@@ -15,8 +17,8 @@
           <a href="#" class="text-pyc-yellow-300 hover:text-pyc-yellow-100">EXPLORE MORE</a>
         </nav>
         <div class="space-x-2">
-          <button class="bg-transparent border border-pyc-yellow-300 text-pyc-yellow-300 px-4 py-2 rounded-full hover:bg-pyc-yellow-300 hover:text-black">LOG IN</button>
-          <button class="bg-pyc-yellow-300 text-brown-900 px-4 py-2 rounded-full hover:bg-pyc-yellow-400 hover:text-black">SIGN UP</button>
+          <%= link_to "LOG IN", new_user_session_path, class: "bg-transparent border border-pyc-yellow-300 text-pyc-yellow-300 px-4 py-2 rounded-full hover:bg-pyc-yellow-300 hover:text-black" %>
+          <%= link_to "SIGN UP", new_user_registration_path, class: "bg-pyc-yellow-300 text-brown-900 px-4 py-2 rounded-full hover:bg-pyc-yellow-400 hover:text-black" %>
         </div>
       </header>
 
